@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap');
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --surface2: #1a1a1a;
+  --border: #2a2a2a;
+  --border-accent: #3a3a3a;
+  --accent: #e8ff47;
+  --accent-dim: rgba(232, 255, 71, 0.12);
+  --accent-glow: rgba(232, 255, 71, 0.25);
+  --text: #f0f0f0;
+  --text-dim: #888;
+  --text-muted: #555;
+  --danger: #ff4757;
+  --success: #2ed573;
+  --mono: 'Share Tech Mono', monospace;
+  --sans: 'Barlow', sans-serif;
+  --condensed: 'Barlow Condensed', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 2px; }
+
+/* Print styles for label printer */
+@media print {
+  @page {
+    size: 4in 2in;
+    margin: 0;
+  }
+
+  body * { visibility: hidden !important; }
+
+  #print-label, #print-label * {
+    visibility: visible !important;
+  }
+
+  #print-label {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 4in;
+    height: 2in;
+    background: white !important;
+    color: black !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.15in 0.2in;
+    font-family: Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #print-label .label-header {
+    font-size: 7pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1.5px solid black;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+    color: black !important;
+  }
+
+  #print-label .label-name {
+    font-size: 18pt;
+    font-weight: 900;
+    line-height: 1;
+    color: black !important;
+    margin-bottom: 2px;
+  }
+
+  #print-label .label-company {
+    font-size: 9pt;
+    color: #333 !important;
+    margin-bottom: 6px;
+  }
+
+  #print-label .label-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    font-size: 7pt;
+    color: black !important;
+  }
+
+  #print-label .label-field strong {
+    display: block;
+    font-size: 6pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555 !important;
+  }
+
+  #print-label .label-visiting {
+    margin-top: 5px;
+    font-size: 7pt;
+    color: black !important;
+    border-top: 0.5px solid #ccc;
+    padding-top: 4px;
+  }
+
+  #print-label .label-visiting strong {
+    font-size: 6pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555 !important;
+  }
+}
