@@ -161,7 +161,7 @@ export default function Home() {
                     <input style={S.input} value={form.surname} onChange={e=>setForm({...form,surname:e.target.value})} placeholder="Smith" required />
                   </Field>
                   <Field label="COMPANY / ORGANISATION" col="1 / -1">
-                    <input style={S.input} value={form.company} onChange={e=>setForm({...form,company:e.target.value})} placeholder="Acme Corporation" />
+                    <input style={S.input} value={form.company} onChange={e=>setForm({...form,company:e.target.value})} placeholder="DRC Switchboards" />
                   </Field>
                   <Field label="CHECK-IN TIME *" col="1">
                     <input style={S.input} type="datetime-local" value={form.checkIn} onChange={e=>setForm({...form,checkIn:e.target.value})} required />
